@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>North Ryde RSL — Strategic Proposal</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #000; font-family: Georgia, 'Times New Roman', serif; }
+
+.v-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  background: #0a0005;
+  overflow: hidden;
+}
+
+.marquee-bar {
+  background: #1a0010;
+  border-bottom: 1px solid #8b0030;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-inner {
+  display: inline-block;
+  animation: marquee 18s linear infinite;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #ff2060;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.neon-header {
+  background: #05000a;
+  padding: 2.5rem 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #2a0020;
+}
+
+.neon-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: #ff2060;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-family: Arial, sans-serif;
+}
+
+.neon-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 0 30px #ff006699, 0 0 60px #ff006633;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.neon-sub {
+  font-size: 12px;
+  color: #ff8c00;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #ffd700 30%, #fff8dc 50%, #ffd700 70%, transparent 100%);
+  margin: 1rem 0;
+}
+
+.lights-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0.75rem 0;
+}
+.bulb {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  animation: blink 1.4s ease-in-out infinite;
+}
+.bulb:nth-child(1)  { background: #ff2060; animation-delay: 0.0s; }
+.bulb:nth-child(2)  { background: #ffd700; animation-delay: 0.2s; }
+.bulb:nth-child(3)  { background: #ff8c00; animation-delay: 0.4s; }
+.bulb:nth-child(4)  { background: #ff2060; animation-delay: 0.6s; }
+.bulb:nth-child(5)  { background: #ffd700; animation-delay: 0.8s; }
+.bulb:nth-child(6)  { background: #ff8c00; animation-delay: 1.0s; }
+.bulb:nth-child(7)  { background: #ff2060; animation-delay: 1.2s; }
+.bulb:nth-child(8)  { background: #ffd700; animation-delay: 0.1s; }
+.bulb:nth-child(9)  { background: #ff8c00; animation-delay: 0.3s; }
+.bulb:nth-child(10) { background: #ff2060; animation-delay: 0.5s; }
+.bulb:nth-child(11) { background: #ffd700; animation-delay: 0.7s; }
+.bulb:nth-child(12) { background: #ff8c00; animation-delay: 0.9s; }
+@keyframes blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px currentColor; }
+  50%       { opacity: 0.2; box-shadow: none; }
+}
+
+.body-pad { padding: 0 2rem; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1.75rem 0 0.75rem;
+}
+.section-header::before, .section-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4a1500);
+}
+.section-label-v {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: #ffd700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+}
+
+.body-text-v { font-size: 13px; color: #e0a060; line-height: 1.8; font-family: Arial, sans-serif; }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: #0f000a;
+  border: 1px solid #3a0025;
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff2060, #ffd700);
+}
+
+.stat-label-v  { font-size: 10px; letter-spacing: 0.14em; color: #ff8c00; text-transform: uppercase; margin-bottom: 6px; font-family: Arial, sans-serif; }
+.stat-val-v    { font-size: 26px; color: #ffd700; font-weight: 400; text-shadow: 0 0 20px #ffd70055; }
+.stat-sub-v    { font-size: 11px; color: #cc6600; margin-top: 3px; line-height: 1.4; font-family: Arial, sans-serif; }
+
+.scope-list-v { list-style: none; padding: 0; margin: 0.5rem 0; }
+.scope-list-v li {
+  font-size: 13px;
+  color: #e0a060;
+  padding: 6px 0 6px 20px;
+  position: relative;
+  border-bottom: 1px solid #1f0800;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+.scope-list-v li:last-child { border-bottom: none; }
+.scope-list-v li::before { content: '♦'; position: absolute; left: 0; color: #ffd700; font-size: 8px; top: 9px; }
+
+.not-box       { background: #0a0500; border: 1px solid #2a1000; border-radius: 8px; padding: 0.875rem 1rem; margin-top: 0.75rem; }
+.not-box-label { font-size: 10px; letter-spacing: 0.14em; color: #cc6600; text-transform: uppercase; margin-bottom: 5px; font-family: Arial, sans-serif; }
+.not-box-body  { font-size: 12px; color: #aa5500; line-height: 1.6; font-family: Arial, sans-serif; }
+
+.table-felt { background: #07060a; border: 1px solid #3a0025; border-radius: 12px; overflow: hidden; margin: 1rem 0; }
+
+.deal-card { padding: 1.125rem 1.25rem; border-bottom: 1px solid #1a0800; }
+.deal-card:last-child { border-bottom: none; }
+
+.deal-top   { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
+.deal-title { font-size: 16px; color: #fff; font-weight: 400; }
+.deal-price { font-size: 18px; color: #ffd700; white-space: nowrap; margin-left: 12px; text-shadow: 0 0 15px #ffd70055; }
+.deal-phase { font-size: 10px; letter-spacing: 0.14em; color: #cc6600; text-transform: uppercase; margin-bottom: 6px; font-family: Arial, sans-serif; }
+.deal-desc  { font-size: 12px; color: #cc7722; line-height: 1.6; font-family: Arial, sans-serif; }
+
+.badge-v      { display: inline-block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; font-weight: 500; font-family: Arial, sans-serif; }
+.badge-v.ante  { background: #1a0800; color: #cc6600; border: 1px solid #3a1500; }
+.badge-v.raise { background: #1a0f00; color: #cc8800; border: 1px solid #4a3000; }
+.badge-v.allin { background: #1a0500; color: #ffd700; border: 1px solid #6a4000; }
+
+.jackpot-box {
+  background: #08000e;
+  border: 1px solid #6a3000;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.25rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.jackpot-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
+}
+.jackpot-label { font-size: 10px; letter-spacing: 0.22em; color: #ffd700; text-transform: uppercase; margin-bottom: 0.5rem; text-shadow: 0 0 10px #ffd70055; font-family: Arial, sans-serif; }
+.jackpot-body  { font-size: 13px; color: #e0a060; line-height: 1.8; font-family: Arial, sans-serif; }
+.jackpot-num   { font-size: 18px; color: #ffd700; text-shadow: 0 0 15px #ffd70066; }
+
+.v-footer { background: #03000a; border-top: 1px solid #2a0020; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.v-footer-name    { font-size: 15px; color: #ffd700; text-shadow: 0 0 10px #ffd70033; }
+.v-footer-title   { font-size: 11px; color: #cc6600; margin-top: 3px; letter-spacing: 0.05em; font-family: Arial, sans-serif; }
+.v-footer-contact { text-align: right; font-size: 11px; color: #ff8c00; line-height: 1.7; font-family: Arial, sans-serif; }
+
+.suit-strip { display: flex; justify-content: center; gap: 16px; padding: 0.75rem 0 1.25rem; font-size: 20px; opacity: 0.2; }
+.suit-r { color: #ff2060; }
+.suit-o { color: #ff8c00; }
+</style>
+</head>
+<body>
+
+<div class="v-wrap">
+
+  <div class="marquee-bar">
+    <span class="marquee-inner">
+      ♠ North Ryde RSL &nbsp;·&nbsp; The Destination Play &nbsp;·&nbsp; 6,000 → 20,000 Members &nbsp;·&nbsp; Confidential &nbsp;·&nbsp;
+      ♦ The Biggest Vision in Sydney &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Strategic Proposal &nbsp;·&nbsp;
+      ♣ North Ryde RSL &nbsp;·&nbsp; The Destination Play &nbsp;·&nbsp; 6,000 → 20,000 Members &nbsp;·&nbsp; Confidential &nbsp;·&nbsp;
+      ♥ The Biggest Vision in Sydney &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Strategic Proposal &nbsp;·&nbsp;
+    </span>
+  </div>
+
+  <div class="neon-header">
+    <div class="neon-eyebrow">A strategic proposal &nbsp;·&nbsp; prepared exclusively for</div>
+    <div class="neon-title">NORTH RYDE RSL</div>
+    <div class="gold-rule"></div>
+    <div class="neon-sub">The destination play &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Confidential</div>
+    <div class="lights-row">
+      <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+      <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+      <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+      <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+    </div>
+  </div>
+
+  <div class="body-pad">
+
+    <div class="section-header"><span class="section-label-v">The read</span></div>
+    <div class="body-text-v">You have 8,000 members, a signed architect, a major redevelopment in motion, and a vision to become the destination venue in northern Sydney. What you've been calling a social media problem is actually a brand, growth, and lifecycle problem — and solving it at the scale you're imagining requires someone who has done it before.</div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label-v">Active members now</div>
+        <div class="stat-val-v">6,000</div>
+        <div class="stat-sub-v">Ageing demo. Low engagement.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label-v">Your target</div>
+        <div class="stat-val-v">20,000</div>
+        <div class="stat-sub-v">New demo. Destination positioning.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label-v">Instagram followers</div>
+        <div class="stat-val-v">694</div>
+        <div class="stat-sub-v">520 posts. No strategy.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label-v">Redevelopment stage</div>
+        <div class="stat-val-v">Pre-DA</div>
+        <div class="stat-sub-v">BSPN engaged. No launch story yet.</div>
+      </div>
+    </div>
+
+    <div class="section-header"><span class="section-label-v">What's on the table</span></div>
+    <div class="body-text-v" style="margin-bottom: 0.75rem;">Seven things. All of them. Done properly. At once.</div>
+    <ul class="scope-list-v">
+      <li>Brand repositioning — reframe the venue as a destination, not a club, anchored to the masterplan vision</li>
+      <li>Member growth — strategy to move from 6K to 20K through acquisition, reactivation, and demographic shift</li>
+      <li>CRM & lifecycle — automated journeys across email and SMS built on the member data already in the room</li>
+      <li>Channel presence — Instagram, Facebook, TikTok, Google, YouTube rebuilt with a coherent brand voice</li>
+      <li>Masterplan communications — member narrative for the redevelopment, community trust, pre-launch momentum</li>
+      <li>Campaign calendar — F&B, activations, events, functions, and seasonal moments planned six months ahead</li>
+      <li>Performance reporting — dashboards against agreed KPIs presented to leadership monthly</li>
+    </ul>
+    <div class="not-box">
+      <div class="not-box-label">Not included in this fee</div>
+      <div class="not-box-body">Day-to-day content production, photography, or paid media spend. Those are scoped separately once strategy is set. This is direction and oversight — not execution headcount.</div>
+    </div>
+
+    <div class="section-header"><span class="section-label-v">The deal structure</span></div>
+
+    <div class="table-felt">
+      <div class="deal-card">
+        <div class="deal-phase">Phase 1 &nbsp;·&nbsp; Weeks 1 & 2</div>
+        <span class="badge-v ante">Ante up</span>
+        <div class="deal-top">
+          <div class="deal-title">Discovery & strategy audit</div>
+          <div class="deal-price">$3,500</div>
+        </div>
+        <div class="deal-desc">Deep-dive into your data, member base, channels, competitor set, and masterplan vision. Delivered as a written strategy document with brand positioning, audience segmentation, channel priorities, and a 90-day action plan. Standalone deliverable — you own it regardless of what you decide next.</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-phase">Phase 2 &nbsp;·&nbsp; Months 1–3</div>
+        <span class="badge-v raise">The raise</span>
+        <div class="deal-top">
+          <div class="deal-title">Foundation build</div>
+          <div class="deal-price">$8,500 / mo</div>
+        </div>
+        <div class="deal-desc">Brand framework, content strategy, CRM architecture, campaign calendar, channel rebuild, and first activation campaigns live. Two half-day sessions on-site per month. Weekly async. Three-month minimum.</div>
+      </div>
+      <div class="deal-card">
+        <div class="deal-phase">Phase 3 &nbsp;·&nbsp; Ongoing</div>
+        <span class="badge-v allin">All in</span>
+        <div class="deal-top">
+          <div class="deal-title">Fractional marketing director</div>
+          <div class="deal-price">$6,500 / mo</div>
+        </div>
+        <div class="deal-desc">Ongoing strategic oversight, campaign direction, board-level reporting, and alignment as the redevelopment progresses. One on-site session per month. Remote-first. Scales as internal capability is built.</div>
+      </div>
+    </div>
+
+    <div class="jackpot-box">
+      <div class="jackpot-label">♦ &nbsp; The jackpot &nbsp; ♦</div>
+      <div class="jackpot-body">Your bar and gaming floors generate <span class="jackpot-num">$200K+</span> per month before EBITDA. A <span class="jackpot-num">10% uplift</span> in active member visits returns <span class="jackpot-num">$20,000+</span> every single month. The strategy fee pays for itself before the first campaign goes live. The question isn't whether you can afford this — it's whether you can afford to walk into a major redevelopment without it.</div>
+    </div>
+
+    <div class="suit-strip">
+      <span class="suit-r">♥</span><span class="suit-o">♠</span>
+      <span class="suit-r">♦</span><span class="suit-o">♣</span>
+      <span class="suit-r">♥</span><span class="suit-o">♠</span>
+      <span class="suit-r">♦</span><span class="suit-o">♣</span>
+    </div>
+
+  </div>
+
+  <div class="v-footer">
+    <div>
+      <div class="v-footer-name">Keyarnie Collins Grimster</div>
+      <div class="v-footer-title">Senior Marketing & Growth Strategist</div>
+    </div>
+    <div class="v-footer-contact">
+      kiarnie@live.com.au<br>0431 333 494
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
